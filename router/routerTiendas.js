@@ -3,7 +3,7 @@ import Tienda from "../models/Tienda.js"
 
 const router = Router()
 
-console.log("Entra a tienda")
+
 
 router.get('/all',
     async (req, res) => {
