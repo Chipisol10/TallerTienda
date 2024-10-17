@@ -46,4 +46,19 @@ let direccionTienda =  async (req, res) => {
     }
 }
 
-export {allTienda,nombreTienda,direccionTienda} 
+let telefonoTienda =  async (req, res) => {
+    try {
+        let telefonoQuery = req.params.telefono
+        let all = await Tienda.find({telefono:telefonoQuery})
+        return res.status(200).json({
+            response: all
+        })
+        
+    } catch (error) {
+        return res.status(500).json({
+            response: error
+        })
+    }
+}
+
+export {allTienda,nombreTienda,direccionTienda,telefonoTienda} 

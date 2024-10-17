@@ -15,6 +15,21 @@ let allEmpleado = async (req, res) => {
     }
     
 }
+let nombreEmpleado =  async (req, res) => {
+    try {
+        let nombreQuery = req.params.nombre
+        let all = await Empleado.find({nombre:nombreQuery})
+        return res.status(200).json({
+            response: all
+        })
+        
+    } catch (error) {
+        return res.status(500).json({
+            response: error
+        })
+    }
+}
+
 
 let cargoEmpleado =  async (req, res) => {
     try {
@@ -46,4 +61,4 @@ let salarioEmpleado =  async (req, res) => {
     }
 }
 
-export  {allEmpleado,cargoEmpleado,salarioEmpleado}
+export  {allEmpleado,nombreEmpleado,cargoEmpleado,salarioEmpleado}

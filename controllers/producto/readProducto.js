@@ -15,6 +15,20 @@ let allProducto = async (req, res) => {
     }
     
 }
+let marcaProducto =  async (req, res) => {
+    try {
+        let marcaQuery = req.params.marca
+        let all = await Producto.find({marca:marcaQuery})
+        return res.status(200).json({
+            response: all
+        })
+        
+    } catch (error) {
+        return res.status(500).json({
+            response: error
+        })
+    }
+}
 
 let tipoProducto =  async (req, res) => {
     try {
@@ -46,4 +60,4 @@ let precioProducto =  async (req, res) => {
     }
 }
 
-export {allProducto,tipoProducto,precioProducto} 
+export {allProducto,marcaProducto,tipoProducto,precioProducto} 
