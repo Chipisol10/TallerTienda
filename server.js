@@ -1,4 +1,4 @@
-import express, { request, response } from "express";//Empezar a utilizar express esta en el carpeta node_modules
+import express from "express";//Empezar a utilizar express esta en el carpeta node_modules
 import "dotenv/config.js"//Importamos la libreria dotenv
 import "./config/database.js"// ojo con las importaciones el orden es muy importante.
 import cors from 'cors'
