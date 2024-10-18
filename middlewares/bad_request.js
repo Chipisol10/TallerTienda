@@ -3,7 +3,7 @@ const bad_request = (error,req,res,next) => {
     return res.status(400).json({
             success: false,
             response: error,
-            message:"Error falta una propiedad"
+            message:"Error falta de sintaxis en la aplicacion"
     })
 }
 
