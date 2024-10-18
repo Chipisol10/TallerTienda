@@ -1,4 +1,4 @@
-const bag_request = (error,req,res,next) => {
+const bad_request = (error,req,res,next) => {
     console.log(error)
     return res.status(400).json({
             success: false,
@@ -7,4 +7,4 @@ const bag_request = (error,req,res,next) => {
     })
 }
 
-export default bag_request
+export default bad_request

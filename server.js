@@ -5,7 +5,7 @@ import cors from 'cors'
 import morgan from 'morgan'
 import indexRouter from "./router/index.js"
 import not_found_handler from "./middlewares/not_found_handler.js";
-import bag_request from "./middlewares/bag_request.js";
+import bad_request from "./middlewares/bad_request.js";
 import error_handler from "./middlewares/error_handler.js";
 
 
@@ -30,7 +30,7 @@ server.use(morgan('dev'))//morgan se utilizar para controlar la peticiones que n
 
 server.use('/api',indexRouter)
 server.use(not_found_handler)
-server.use(bag_request)
+server.use(bad_request)
 server.use(error_handler)
 
 
