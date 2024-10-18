@@ -1,5 +1,5 @@
-import {  Router } from "express";//importamos Router de express
-import {allEmpleado,nombreEmpleado,cargoEmpleado,salarioEmpleado} from "../controllers/empleado/readEmpleado.js";// importamos al controlador 
+import {  Router } from "express"
+import {allEmpleado,nombreEmpleado,cargoEmpleado,salarioEmpleado} from "../controllers/empleado/readEmpleado.js" 
 import { create,createMany } from "../controllers/empleado/createEmpleado.js"
 
 const router = Router()

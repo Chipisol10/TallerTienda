@@ -1,4 +1,4 @@
-import Producto from "../../models/Producto.js" //importamos el modelo
+import Producto from "../../models/Producto.js" 
 
 
 let allProducto = async (req, res, next) => {

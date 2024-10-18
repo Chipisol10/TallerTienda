@@ -1,4 +1,4 @@
-import Producto from "../../models/Producto.js";
+import Producto from "../../models/Producto.js"
 
 let create = async (req, res, next) => {
     try {

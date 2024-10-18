@@ -1,6 +1,6 @@
-import {  Router } from "express";//importamos Router de express
-import {allTienda,nombreTienda,direccionTienda,telefonoTienda} from "../controllers/tienda/readTienda.js";// importamos a los  controladores de get
-import { create,createMany } from "../controllers/tienda/createTienda.js" //importamos a los controladores de post
+import {  Router } from "express"
+import {allTienda,nombreTienda,direccionTienda,telefonoTienda} from "../controllers/tienda/readTienda.js"
+import { create,createMany } from "../controllers/tienda/createTienda.js" 
 
 const router = Router()
 

@@ -1,5 +1,5 @@
-import { Schema, model } from "mongoose";// importamos solo una parte mongoose
-//Creamos un esquema 
+import { Schema, model } from "mongoose"
+
 let collection = "empleado"
 let shema = new Schema({
     nombre:{type:String,required:true},
@@ -9,6 +9,6 @@ let shema = new Schema({
   timestamps:true  
 })
 
-let Empleado = model(collection,shema)// un modelo tiene la coleccion y el esquema que tiene.
+let Empleado = model(collection,shema)
 
 export default Empleado

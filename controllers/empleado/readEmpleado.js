@@ -1,4 +1,4 @@
-import Empleado from "../../models/Empleado.js" //importamos el modelo
+import Empleado from "../../models/Empleado.js" 
 
 
 let allEmpleado = async (req, res, next) => {
