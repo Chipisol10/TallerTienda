@@ -1,7 +1,7 @@
 import Tienda from "../../models/Tienda.js" //importamos el modelo
 
 
-let allTienda = async (req, res) => {
+let allTienda = async (req, res, next) => {
     try {
         let all = await Tienda.find()
         return res.status(200).json({
@@ -9,14 +9,12 @@ let allTienda = async (req, res) => {
         })
         
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+        next(error)
     }
     
 }
 
-let nombreTienda =  async (req, res) => {
+let nombreTienda =  async (req, res, next) => {
     try {
         let nombreQuery = req.params.nombre
         let all = await Tienda.find({nombre:nombreQuery})
@@ -25,13 +23,11 @@ let nombreTienda =  async (req, res) => {
         })
         
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+       next(error)
     }
 }
 
-let direccionTienda =  async (req, res) => {
+let direccionTienda =  async (req, res, next) => {
     try {
         let direccionQuery = req.params.direccion
         let all = await Tienda.find({direccion:direccionQuery})
@@ -40,13 +36,12 @@ let direccionTienda =  async (req, res) => {
         })
         
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+        
+            next(error)
     }
 }
 
-let telefonoTienda =  async (req, res) => {
+let telefonoTienda =  async (req, res,next) => {
     try {
         let telefonoQuery = req.params.telefono
         let all = await Tienda.find({telefono:telefonoQuery})
@@ -55,9 +50,7 @@ let telefonoTienda =  async (req, res) => {
         })
         
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+       next(error)
     }
 }
 

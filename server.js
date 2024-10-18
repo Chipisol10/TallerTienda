@@ -4,6 +4,9 @@ import "./config/database.js"// ojo con las importaciones el orden es muy import
 import cors from 'cors'
 import morgan from 'morgan'
 import indexRouter from "./router/index.js"
+import not_found_handler from "./middlewares/not_found_handler.js";
+import error_handler from "./middlewares/error_handler.js";
+
 
 const server = express() // Creamos una variable por buenas practicas se le coloca el nombre server que contiene todo el express()
 
@@ -25,23 +28,12 @@ server.use(morgan('dev'))//morgan se utilizar para controlar la peticiones que n
 //router 
 
 server.use('/api',indexRouter)
-
-
-
-
-
-//Creacion de Endpoints
-// server.get('/',(request,response)=>{
-//     response.send('Hola mundo en Express')
-// })
-
-// server.get('/saludo',(request,response)=>{
-//     response.send('Hola bienvenido al mundo de Express')
-// })
+server.use(not_found_handler)
+server.use(error_handler)
 
 
 
 server.listen(PORT,ready)//Levantamos el servidor, utilizamos la propiedad listen para escucha, el puerto 8080. 
 
-//console.log(process.env.PORT); para saber las variables de entorno.
+
 

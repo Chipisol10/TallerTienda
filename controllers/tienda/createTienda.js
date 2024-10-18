@@ -1,6 +1,6 @@
 import Tienda from "../../models/Tienda.js";//importamos el modelo 
 
-let create = async (req, res) => {
+let create = async (req, res, next) => {
     try {
         let tienda = req.body
         let all = await Tienda.create(tienda)
@@ -9,13 +9,11 @@ let create = async (req, res) => {
             response:all
         })
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+        next(error)
     }
 }
 
-let createMany = async (req, res) => {
+let createMany = async (req, res, next) => {
     try {
        let tiendaVarias = req.body
        let all = await Tienda.insertMany(tiendaVarias)
@@ -24,9 +22,7 @@ let createMany = async (req, res) => {
         response:all
        })
     } catch (error) {
-        return res.status(500).json({
-            response:error
-        })
+        next(error)
     }
 }
 
