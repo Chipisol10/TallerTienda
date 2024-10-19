@@ -1,8 +1,6 @@
-//Para poder traer las variables de entornos
 import 'dotenv/config.js'
-//Para conectarse a la base de datos 
 import '../../config/database.js'
-//Conectarme con el Modelo
+
 import Empleado from '../Empleado.js';
 
 const empleados = [
